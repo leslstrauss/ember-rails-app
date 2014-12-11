@@ -1,5 +1,5 @@
-import Ember from 'ember';
 import startApp from 'ember-rails-app/tests/helpers/start-app';
+import Ember from 'ember';
 
 var App;
 
@@ -14,6 +14,8 @@ module('Integration - Home Page', {
 
 test('RealFeelz home page', function() {
   visit('/').then(function() {
-    equal(find('h1#title').text(), 'RealFeelz');
+    click("a:contains('RealFeelz')").then(function() {
+    equal(find('h2#title').text(), 'RealFeelz');
+    });
   });
 });

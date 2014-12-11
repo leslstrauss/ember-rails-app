@@ -3,7 +3,7 @@ import Ember from 'ember';
 
 var App;
 
-module('Integration - About Page', {
+module('Integration - Statements Page', {
   setup: function() {
     App = startApp();
   },
@@ -12,10 +12,10 @@ module('Integration - About Page', {
   }
 });
 
-test('About page', function() {
+test('Statements page', function() {
   visit('/').then(function() {
-    click("a:contains('About')").then(function() {
-      equal(find('h4').text(), 'About');
+    click("a:contains('Statements')").then(function() {
+      equal(find('h3#title').text(), 'Statements');
     });
   });
 });
